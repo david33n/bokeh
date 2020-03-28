@@ -700,7 +700,7 @@ export class Document {
           const {msg_type, msg_data} = event_json
           let data: unknown
           if (msg_data === undefined) {
-            if (buffers.length == 1) {
+            if (buffers.size == 1) {
               const [[, buffer]] = buffers
               data = buffer
             } else {
