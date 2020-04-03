@@ -186,6 +186,7 @@ async function headless(port: number): Promise<ChildProcess> {
     proc.on("error", reject)
     proc.stderr.on("data", (chunk) => {
       const text = `${chunk}`
+      console.log(text)
 
       for (const line of text.split("\n")) {
         if (line.match(/DevTools listening/) != null) {
